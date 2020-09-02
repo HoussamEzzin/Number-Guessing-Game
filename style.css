@@ -39,6 +39,7 @@ body{
     background-color: #b1cbbb;
     font-size:25px;
     color:black;
+    border-radius: 18px;
 }
 .guessSubmit:hover{
     background-color:#deeaee;

@@ -16,7 +16,7 @@
             <div class="form">
                 <label for="guessField">Enter a guess: </label>
                 <input type="text" id="guessField" class="guessField" placeholder="Enter the number here" required>
-                <input type="submit" value="Submit guess" class="guessSubmit" >
+                <button  class="guessSubmit" >Submit guess</button>
             </div>
 
             <div class="resultParas">
@@ -44,10 +44,12 @@
 
             let guessCount = 1 ;
             let resetButton;
+            
             /**
             *!Les fonctions : */
             function checkGuess(){
                 //declaration d'une variable qui contient la valeur saisie dans le champ de texte.
+                document.getElementById("guessField").required=true;
                 let userGuess = Number(guessField.value);//Number() : pour nous assurer que la valeur stockée est bien un nombre.
                 if(guessCount===1){//S'il s'agit de la première supposition du joueur.
                     guesses.textContent='Previous attempts :';
@@ -76,7 +78,11 @@
                 guessField.value='';
                 guessField.focus();
             }
-
+            $(guessField).keypress(function(event) { 
+            if (event.keyCode === 13) { 
+                $(guessSubmit).click(); 
+            } 
+            }); 
             guessSubmit.addEventListener('click',checkGuess);
             
            
@@ -89,10 +95,13 @@
                 document.getElementById("resetButton").appendChild(resetButton);
                 resetButton.style.fontSize="x-large" ;
                 resetButton.style.backgroundColor="#b1cbbb";
+                resetButton.style.borderRadius="18px";
                 $(resetButton).hover(function(){
                     $(this).css("background-color", "DarkGoldenRod");
+                    $(this).css("color","white");
                     }, function(){
                     $(this).css("background-color", "#b1cbbb");
+                    $(this).css("color","black");
                 });
                 resetButton.addEventListener('click',resetGame);
             }
