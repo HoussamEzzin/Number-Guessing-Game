@@ -15,8 +15,7 @@ body{
 }
 #main{
     width:50%;
-    max-width: 1200px;
-    min-width: 680px;
+    
     height: auto;
     margin: 0 auto;
     background-color:#c94c4c;
@@ -42,9 +41,10 @@ body{
     border-radius: 18px;
 }
 .guessSubmit:hover{
-    background-color:#deeaee;
+    background-color:#eea29a;
 }
 #guessField{
+    width:35%;
     height: 25px;
     font-size: 25px;
 }
