@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Number guessing game</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="jquery-3.5.1.min.js"></script>
     </head>
     <body>
         <h1>
@@ -15,14 +16,16 @@
             <div class="form">
                 <label for="guessField">Enter a guess: </label>
                 <input type="text" id="guessField" class="guessField" placeholder="Enter the number here">
-                <input type="submit" value="Submit guess" class="guessSubmit">
+                <input type="submit" value="Submit guess" class="guessSubmit" >
             </div>
 
             <div class="resultParas">
                 <p class="guesses"></p>
                 <p class="lastResult"></p>
                 <p class="lowOrHi"></p>
+                <p id="resetButton"></p>
             </div>
+            
         </div>
         <script>
             /**
@@ -75,13 +78,21 @@
             }
 
             guessSubmit.addEventListener('click',checkGuess);
+           
 
             function setGameOver(){
                 guessField.disabled=true;
                 guessSubmit.disabled=true;
                 resetButton=document.createElement('button');
                 resetButton.textContent='Start new game';
-                document.body.appendChild(resetButton);
+                document.getElementById("resetButton").appendChild(resetButton);
+                resetButton.style.fontSize="x-large" ;
+                resetButton.style.backgroundColor="#b1cbbb";
+                $(resetButton).hover(function(){
+                    $(this).css("background-color", "DarkGoldenRod");
+                    }, function(){
+                    $(this).css("background-color", "#b1cbbb");
+                });
                 resetButton.addEventListener('click',resetGame);
             }
             

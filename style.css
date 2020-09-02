@@ -25,7 +25,7 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size:30px;
 }
-div.resultParas{
+.resultParas{
     background-color: #eea29a;
     color:black;
     border-bottom-right-radius: 20px;
@@ -42,9 +42,9 @@ div.resultParas{
 }
 .guessSubmit:hover{
     background-color:#deeaee;
-
 }
 #guessField{
     height: 25px;
     font-size: 25px;
 }
+
