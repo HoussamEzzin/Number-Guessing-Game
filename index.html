@@ -15,7 +15,7 @@
 
             <div class="form">
                 <label for="guessField">Enter a guess: </label>
-                <input type="text" id="guessField" class="guessField" placeholder="Enter the number here">
+                <input type="text" id="guessField" class="guessField" placeholder="Enter the number here" required>
                 <input type="submit" value="Submit guess" class="guessSubmit" >
             </div>
 
@@ -23,7 +23,7 @@
                 <p class="guesses"></p>
                 <p class="lastResult"></p>
                 <p class="lowOrHi"></p>
-                <p id="resetButton"></p>
+                <span id="resetButton"></span>
             </div>
             
         </div>
@@ -78,6 +78,7 @@
             }
 
             guessSubmit.addEventListener('click',checkGuess);
+            
            
 
             function setGameOver(){
@@ -112,7 +113,7 @@
                 guessField.value='';
                 guessField.focus();
 
-                lastResult.style.backgroundColor='white';//supprimer la couleur d'arrière-plan du paragraphe lastResult
+                lastResult.style.backgroundColor='#b1cbbb';//supprimer la couleur d'arrière-plan du paragraphe lastResult
 
                 randomNumber=Math.floor(Math.random() * 100) +1 ;//génèrer un nv nombre aléatoire afin que vous ne deviniez plus le meme nombre.
             }
