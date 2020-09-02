@@ -44,3 +44,7 @@ div.resultParas{
     background-color:#deeaee;
 
 }
+#guessField{
+    height: 25px;
+    font-size: 25px;
+}
